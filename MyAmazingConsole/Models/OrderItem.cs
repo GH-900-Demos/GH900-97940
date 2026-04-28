@@ -10,6 +10,9 @@ public class OrderItem
 
     public OrderItem(string code, string description, int quantity, decimal unitCost)
     {
+        if (quantity <= 0)
+            throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity must be greater than zero.");
+
         Code = code;
         Description = description;
         Quantity = quantity;
