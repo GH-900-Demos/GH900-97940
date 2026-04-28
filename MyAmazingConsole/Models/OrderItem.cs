@@ -4,15 +4,24 @@ public class OrderItem
 {
     public string Code { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
-    public int Quantity { get; set; }
+
+    private int _quantity;
+    public int Quantity
+    {
+        get => _quantity;
+        set
+        {
+            if (value <= 0)
+                throw new ArgumentOutOfRangeException(nameof(Quantity), "Quantity must be greater than zero.");
+            _quantity = value;
+        }
+    }
+
     public decimal UnitCost { get; set; }
     public decimal TotalCost => Quantity * UnitCost;
 
     public OrderItem(string code, string description, int quantity, decimal unitCost)
     {
-        if (quantity <= 0)
-            throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity must be greater than zero.");
-
         Code = code;
         Description = description;
         Quantity = quantity;
