@@ -44,7 +44,7 @@ public class OrderItem
     /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="quantity"/> is less than or equal to zero.</exception>
     public OrderItem(string code, string description, int quantity, decimal unitCost)
     {
-        Code = description;
+        Code = code;
         Description = description;
         Quantity = quantity;
         UnitCost = unitCost;
