@@ -1,4 +1,4 @@
-# MyAmazingApp
+# MyAmazingApp New one
 
 A .NET console application that demonstrates a simple order management system using an in-memory repository pattern.
 
